@@ -1,12 +1,6 @@
 import React from "react";
 import './App.css';
-
-const Header = (props) => (
-  <header>
-    <h1>{ props.title }</h1>
-    <span className="stats">Players : { props.totalPlayers }</span>
-  </header>
-);
+import {Header} from "./component/Header";
 
 const Player = (props) => (
   <div className="player">
