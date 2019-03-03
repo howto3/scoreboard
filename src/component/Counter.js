@@ -1,9 +1,8 @@
 import React from "react";
 
-
 export class Counter extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       score: 0
     }
@@ -27,6 +26,6 @@ export class Counter extends React.Component {
         <span className="counter-score">{ this.state.score }</span>
         <button className="counter-action increment" onClick={this.incrementScore}>+</button>
       </div>
-    )
+    );
   }
 }
