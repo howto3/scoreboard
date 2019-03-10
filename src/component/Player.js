@@ -14,18 +14,17 @@ class Player extends React.Component {
   };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
-    // console.log('shouldComponentUpdate', nextProps);
     return nextProps.score !== this.props.score;
   }
   render() {
-    const {removePlayer, name, score, id, grantScore} = this.props;
+    const {removePlayer, name, score, id} = this.props;
     return (
       <div className="player">
         <span className="player-name">
           <button className="remove-player" onClick={() => removePlayer(id)}>x</button>
         </span>
         <span className="player-name">{ name }</span>
-        <Counter score={ score } grantScore = { grantScore } id = { id } />
+        <Counter score={ score } id = { id } />
       </div>
     );
   }

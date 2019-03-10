@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import './App.css';
+import Header from "./component/Header";
 import Player from "./component/Player";
 import AddPlayerForm from "./component/AddPlayerForm";
 import {connect} from "react-redux";
-import Header from "./component/Header";
 
 class App extends Component {
 
@@ -18,8 +18,6 @@ class App extends Component {
               name={item.name}
               id={item.id}
               score={item.score}
-              removePlayer={this.handleRemovePlayer}
-              grantScore={this.grantScore}
             />)
         }
         <AddPlayerForm/>
