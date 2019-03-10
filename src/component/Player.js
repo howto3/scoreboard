@@ -1,8 +1,10 @@
 import React from "react";
-import {Counter} from "./Counter";
+import Counter from "./Counter";
 import PropTypes from 'prop-types';
+import {removePlayer} from "../redux/action";
+import {connect} from "react-redux";
 
-export class Player extends React.Component {
+class Player extends React.Component {
   static propTypes = {
     removePlayer: PropTypes.func,
     name: PropTypes.string.isRequired,
@@ -16,8 +18,6 @@ export class Player extends React.Component {
     return nextProps.score !== this.props.score;
   }
   render() {
-    console.log('Player.name:', this.props.name);
-
     const {removePlayer, name, score, id, grantScore} = this.props;
     return (
       <div className="player">
@@ -30,3 +30,10 @@ export class Player extends React.Component {
     );
   }
 }
+
+
+const mapDispatchToProps = (dispatch) => ({
+  removePlayer: (id) => dispatch(removePlayer(id))
+});
+
+export default connect(null, mapDispatchToProps)(Player);

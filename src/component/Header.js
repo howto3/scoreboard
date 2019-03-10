@@ -2,12 +2,14 @@ import React from "react";
 import {Stats} from "./Stats";
 import {Stopwatch} from "./Stopwatch";
 import PropTypes from 'prop-types';
+import {connect} from "react-redux";
+import {updateTitle} from "../redux/action";
 
-export const Header = ({title, players}) => {
+const Header = ({title, players, changeTitle}) => {
   return (
     <header>
       <Stats players = { players } />
-      <h1>{ title }</h1>
+      <h1 onClick={changeTitle}>{ title }</h1>
       <Stopwatch />
     </header>
   )
@@ -23,5 +25,15 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  title: "Default Title"
+  title: "Scoreboard"
 };
+
+let mapStateToProps = (state) => ({
+  title: state.playerReducer.title
+});
+
+let mapDispatchToProps = (dispatch) => ({
+  changeTitle: () => dispatch(updateTitle('dispatch title'))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
