@@ -1,10 +1,15 @@
 import React from "react";
 import {Counter} from "./Counter";
+import PropTypes from 'prop-types';
 
 export class Player extends React.Component {
-  /*componentWillReceiveProps(nextProps, nextContext) {
-    console.log('componentWillReceiveProps', nextProps);
-  }*/
+  static propTypes = {
+    removePlayer: PropTypes.func,
+    name: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    grantScore: PropTypes.func
+  };
 
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     // console.log('shouldComponentUpdate', nextProps);

@@ -1,10 +1,6 @@
 import React from "react";
 
 export class Stopwatch extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   tickRef;
   state = {
     isRunning: false,
