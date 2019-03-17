@@ -1,5 +1,5 @@
 import React from "react";
-import {Heroes} from "./Heroes";
+import {Heroes} from "./heroes/Heroes";
 import {Home} from "./Home";
 import Scoreboard from "./scoreboard/Scoreboard";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
