@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import styles from './Scoreboard.module.css';
 import Header from "./component/Header";
 import Player from "./component/Player";
 import AddPlayerForm from "./component/AddPlayerForm";
 import {connect} from "react-redux";
+import styles from './Scoreboard.module.css';
 
 class Scoreboard extends Component {
   render() {

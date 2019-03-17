@@ -41,10 +41,10 @@ export class Register extends React.Component {
     return (
       <>
         <h3>Hero Registration</h3>
-        <div>
+        <form>
           <div className="form-group mt-1">
             <label htmlFor="name">Name</label>
-            <input type="name" className="form-control" placeholder="Enter Name" id="name" value={this.state.name} onChange={(e) => this.handleText(e, 'name')} />
+            <input type="text" className="form-control" placeholder="Enter Name" id="name" value={this.state.name} onChange={(e) => this.handleText(e, 'name')} />
           </div>
           <div className="form-group mt-1">
             <label htmlFor="email">Email Address</label>
@@ -74,7 +74,7 @@ export class Register extends React.Component {
           <div className="form-group mt-1">
             <label htmlFor="address">Address</label>
             <textarea className="form-control" placeholder="Enter address" id="address" rows="3"
-                      onChange={(e)=>this.handleText(e, 'address')}>{this.state.address}</textarea>
+                      value={this.state.address} onChange={(e)=>this.handleText(e, 'address')}></textarea>
           </div>
           <div className="d-flex flex-column mt-1">
             <div>power</div>
@@ -100,7 +100,7 @@ export class Register extends React.Component {
           <div className="m-3 d-flex justify-content-center">
             <button type="submit" className="btn btn-outline-primary">등록</button>
           </div>
-        </div>
+        </form>
       </>
     );
   }
