@@ -43,7 +43,6 @@ export class Heroes extends React.Component {
   };
 
   handleClick = (event, hero_id) => {
-    console.log(event, hero_id);
     event.preventDefault();
     this.props.history.push(`/heroes/hero/${hero_id}`);
   };

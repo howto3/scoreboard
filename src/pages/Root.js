@@ -1,5 +1,5 @@
 import React from "react";
-import {Heroes} from "./heroes/Heroes";
+import {Index} from "./heroes/Index";
 import {Home} from "./Home";
 import Scoreboard from "./scoreboard/Scoreboard";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
@@ -14,7 +14,7 @@ export class Root extends React.Component {
           <div className="container" style={{backgroundColor: '#ffffff'}}>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route path="/heroes" component={Heroes}/>
+              <Route path="/heroes" component={Index}/>
               <Route path="/scoreboard" component={Scoreboard}/>
             </Switch>
           </div>
