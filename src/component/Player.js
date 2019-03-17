@@ -29,10 +29,9 @@ class Player extends React.Component {
     );
   }
 }
-
-
+/*
 const mapDispatchToProps = (dispatch) => ({
   removePlayer: (id) => dispatch(removePlayer(id))
 });
-
-export default connect(null, mapDispatchToProps)(Player);
+*/
+export default connect(null, {removePlayer})(Player);
