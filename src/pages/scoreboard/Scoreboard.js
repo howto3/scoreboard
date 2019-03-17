@@ -1,15 +1,14 @@
 import React, {Component} from "react";
-import './App.css';
+import styles from './Scoreboard.module.css';
 import Header from "./component/Header";
 import Player from "./component/Player";
 import AddPlayerForm from "./component/AddPlayerForm";
 import {connect} from "react-redux";
 
-class App extends Component {
-
+class Scoreboard extends Component {
   render() {
     return (
-      <div className="scoreboard">
+      <div className={styles.scoreboard}>
         <Header players = { this.props.players } />
         {
           this.props.players.map(item =>
@@ -30,4 +29,4 @@ const mapStateToProps = (state) => ({
   players: state.playerReducer.players
 });
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Scoreboard);

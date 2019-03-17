@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import {store} from './redux/store';
+import {store} from './pages/scoreboard/redux/store';
 import {Provider} from "react-redux";
 import {Root} from "./pages/Root";
 

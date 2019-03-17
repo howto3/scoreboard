@@ -2,15 +2,17 @@ import PropTypes from 'prop-types';
 import React from "react";
 import {connect} from "react-redux";
 import {changeScore} from "../redux/action";
+import classNames from "classnames";
+import styles from "../Scoreboard.module.css";
 
 const Counter = (props) => {
   const {changeScore, id, score} = props;
 
   return (
-    <div className="counter">
-      <button className="counter-action decrement" onClick={() => changeScore('minus', id, 5)}>-</button>
-      <span className="counter-score">{score}</span>
-      <button className="counter-action increment" onClick={() => changeScore('plus', id, 5)}>+</button>
+    <div className={styles.counter}>
+      <button className={classNames(styles["counter-action"], styles.decrement)} onClick={() => changeScore('minus', id, 5)}>-</button>
+      <span className={styles["counter-score"]}>{score}</span>
+      <button className={classNames(styles["counter-action"], styles.increment)} onClick={() => changeScore('plus', id, 5)}>+</button>
     </div>
   )
 };
